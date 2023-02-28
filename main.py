@@ -18,7 +18,7 @@ if __name__ == '__main__':
     lcd = lcd()
     try:
         while True:
-            lcd.write(temperature, "current temp", get_time_now())
+            lcd.write(temperature, get_time_now())
             sleep(1)
     except KeyboardInterrupt:
         lcd.destroy()
