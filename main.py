@@ -14,4 +14,4 @@ if __name__ == '__main__':
 
        # destroy()
     lcd = lcd()
-    lcd.write()
+    lcd.write(str(temperature) + "F", "current temp")
