@@ -11,7 +11,7 @@ if __name__ == '__main__':
     print ('Program is starting ... ')
     weather = weather()
     weather.request_data()
-    temperature = "Current: " + round(weather.tempF()) + "F"
+    temperature = "Current: " + str(round(weather.tempF())) + "F"
     print(temperature)
     print(json.dumps(weather.data))
 
