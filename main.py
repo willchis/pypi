@@ -1,6 +1,6 @@
 from datetime import datetime
 import json
-#from lcd import lcd
+from lcd import lcd
 from time import sleep
 from weather import weather
 from zoneinfo import ZoneInfo
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print(temperature)
     print(json.dumps(weather.data))
 
-    #lcd = lcd()
+    lcd = lcd()
     try:
         i = 0
         duration = 3
@@ -36,8 +36,9 @@ if __name__ == '__main__':
         }
         times_index = list(times)
         while True:
-            #lcd.write(temperature, get_time_now())
-            print(get_time_now(times[times_index[i]]) + " " + times_index[i])
+            time_output = get_time_now(times[times_index[i]]) + " " + times_index[i]
+            lcd.write(temperature, time_output)
+            print(time_output)
             sleep(1)
             i += 1
             if (i >= len(times_index)):
