@@ -20,7 +20,7 @@ if __name__ == '__main__':
     print ('Program is starting ... ')
     weather = weather()
     weather.request_data()
-    temperature = "Current: " + str(round(weather.tempF())) + "F"
+    temperature = str(round(weather.tempF())) + "F"
     print(temperature)
     print(json.dumps(weather.data))
 
@@ -31,7 +31,8 @@ if __name__ == '__main__':
         times = {
             "Local": None,
             "UK": UK,
-            "PST": PST
+            "Pacific": PST,
+            "India": INDIA
         }
         times_index = list(times)
         while True:
@@ -40,6 +41,6 @@ if __name__ == '__main__':
             sleep(1)
             i += 1
             if (i >= len(times_index)):
-                i = 1
+                i = 0
     except KeyboardInterrupt:
         lcd.destroy()
