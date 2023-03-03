@@ -8,7 +8,7 @@ class weather():
 
     def __init__(self):
         if weather.weather_env_key not in os.environ:
-            raise Exception("Weather API Key not in environment var: " + weather.weather_env_key)
+            raise Exception("Weather API Key not set in environment var: " + weather.weather_env_key)
 
     def request_data(self):
         params = dict (
@@ -28,3 +28,6 @@ class weather():
             kelvin = self.data["temp"]
             tempF = (9.0 / 5) * (kelvin - 273.15) + 32
         return tempF
+    
+    def humidity(self):
+        return self.data["humidity"] if "humidity" in self.data else None
