@@ -6,6 +6,8 @@ from datetime import datetime
 PCF8574_address = 0x27
 PCF8574A_address = 0x3F
 
+screen_width = 16
+
 class lcd():
     def __init__(self):
         try:
@@ -34,7 +36,8 @@ class lcd():
         return datetime.now().strftime('%H:%M:%S')
 
     def write(self, line_one, line_two):
-            self.lcd_hardware.clear()
+            line_one.ljust(screen_width, ' ')
+            line_two.ljust(screen_width, ' ')
             self.lcd_hardware.setCursor(0,0)
             self.lcd_hardware.message(str(line_one) + '\n')
             self.lcd_hardware.message(str(line_two))
