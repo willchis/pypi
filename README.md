@@ -20,3 +20,8 @@ I2C device address detection:
 
 Install Smbus Module:  
 `sudo apt-get install python3-smbus`
+
+Get a weather API key from https://openweathermap.org/api
+
+Get a stock price API key from https://finnhub.io/
+

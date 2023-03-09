@@ -43,13 +43,14 @@ if __name__ == '__main__':
             "Pacific": PST,
             "India": INDIA
         }
+        
         times_keys = list(times)
         while True:
             time_output = get_time_now(times[times_keys[chosen_time]]) + " " + times_keys[chosen_time]
             print(time_output)
 
             temperature = str(round(weather.tempF())) + chr(176) + "F"
-            humidity = str(weather.humidity()) + "%"
+            humidity = str(weather.humidity()) + "% HUM"
             stock_price = "STEM: $" + str(stocks.price)
 
             if (stocks.change is not None):
