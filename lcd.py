@@ -34,7 +34,7 @@ class lcd():
         return datetime.now().strftime('%H:%M:%S')
 
     def write(self, line_one, line_two):
-            #lcd.clear()
+            lcd.clear()
             self.lcd_hardware.setCursor(0,0)
             self.lcd_hardware.message(str(line_one) + '\n')
             self.lcd_hardware.message(str(line_two))
