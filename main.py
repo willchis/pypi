@@ -48,7 +48,7 @@ if __name__ == '__main__':
             time_output = get_time_now(times[times_keys[chosen_time]]) + " " + times_keys[chosen_time]
             print(time_output)
 
-            temperature = str(round(weather.tempF())) + "°F"
+            temperature = str(round(weather.tempF())) + chr(176) + "F"
             humidity = str(weather.humidity()) + "%"
             stock_price = "STEM: $" + str(stocks.price)
 
