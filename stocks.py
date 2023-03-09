@@ -20,4 +20,4 @@ class stocks():
         json_response = response.json()
         self.price = json_response["c"] if "c" in json_response else None
         self.change = json_response["dp"] if "dp" in json_response else None
-        print("STEM price: " + str(self.price))
+        print("STEM price: " + str(self.price) + " change: " + str(self.change))

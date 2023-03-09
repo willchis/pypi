@@ -49,12 +49,10 @@ if __name__ == '__main__':
             time_output = get_time_now(times[times_keys[chosen_time]]) + " " + times_keys[chosen_time]
             print(time_output)
 
-            temperature = str(round(weather.tempF())) + chr(176) + "F"
+            temperature = str(round(weather.tempF())) + chr(223) + "F"
             humidity = str(weather.humidity()) + "% HUM"
-            stock_price = "STEM: $" + str(stocks.price)
+            stock_price = "STEM: ${:} {:.0f}%".format(stocks.price, stocks.change)
 
-            if (stocks.change is not None):
-                stock_price += " " + str(stocks.change) + "%"
             if (i % 10 < 5):
                 lcd.write(temperature + " " + humidity, time_output)
             else:
