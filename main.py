@@ -1,9 +1,9 @@
 from datetime import datetime
 import json
 from lcd import lcd
-from stocks import stocks
+from Stocks import stocks
 from time import sleep
-from weather import weather
+from Weather import weather
 from zoneinfo import ZoneInfo
 
 PST = ZoneInfo("America/Los_Angeles")

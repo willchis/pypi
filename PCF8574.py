@@ -54,12 +54,12 @@ class PCF8574_GPIO(object):#Standardization function interface
     IN = 1
     BCM = 0
     BOARD = 0
-    def __init__(self,address):
+    def __init__(self, address):
         self.chip = PCF8574_I2C(address)
         self.address = address
-    def setmode(self,mode):#PCF8574 port belongs to two-way IO, do not need to set the input and output model
+    def setmode(self, mode):#PCF8574 port belongs to two-way IO, do not need to set the input and output model
         pass
-    def setup(self,pin,mode):
+    def setup(self, pin, mode):
         pass
     def input(self,pin):#Read PCF8574 one port of the data
         return self.chip.digitalRead(pin)
